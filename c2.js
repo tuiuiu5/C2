@@ -150,11 +150,16 @@ var cores = [ "AliceBlue",
 var alpha_colors = [cores[Math.floor(Math.random() * cores.length)]];
 var i = 0;
 while(i<9){
-    if(alpha_colors[i].includes(alpha_colors[i-1])){
-        alpha_colors.pop();
-    }else{ 
-            alpha_colors.push(cores[Math.floor(Math.random() * cores.length)]);
-            i++;}
+    if(alpha_colors[i] != alpha_colors[i-1]){
+        alpha_colors.push(cores[Math.floor(Math.random() * cores.length)]);
+        i++;
+    }else{
+            while(alpha_colors[i] == alpha_colors[i-1]){
+                alpha_colors.pop(i);
+                alpha_colors.push(cores[Math.floor(Math.random() * cores.length)]);
+            }
+            i++;
+        }
 }
 alpha_colors.sort();
 var acabou = false;
