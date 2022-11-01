@@ -147,16 +147,24 @@ var cores = [ "AliceBlue",
 "Yellow",
 "YellowGreen"
 ];
-var alpha_colors = [];
-var i = 0;
-while(i<9){
-    var corrandom = cores[Math.floor(Math.random() * cores.length)]
-    alpha_colors.push(corrandom);
-    cores.splice(corrandom, 1)
+var alpha_colors = [cores[Math.floor(Math.random()  cores.length)]];
+var i = 1;
+while(i<10){
+    if(alpha_colors[i] != alpha_colors[i-1]){
+        alpha_colors.push(cores[Math.floor(Math.random()  cores.length)]);
+        alpha_colors.sort();
+        i++;
+    }else{
+            while(alpha_colors[i] == alpha_colors[i-1]){
+                alpha_colors.splice(i, 1);
+                alpha_colors.push(cores[Math.floor(Math.random()  cores.length)]);
+                alpha_colors.sort();
+
+            }
+            i++;
+        }
 }
-var acabou = false;
-var tentativas = 0;
-var coralvo = alpha_colors[Math.floor(Math.random() * alpha_colors.length)];
+
 
 function do_game() {
   var adivinha_cor = prompt("Estou pensando em uma dessas cores \n\n" + alpha_colors + "\n\n Em qual delas estou pensando?");
