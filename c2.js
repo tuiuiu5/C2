@@ -148,8 +148,8 @@ var cores = [ "AliceBlue",
 "YellowGreen"
 ];
 var alpha_colors = [cores[Math.floor(Math.random() * cores.length)]];
-var i = 0;
-while(i<9){
+var i = 1;
+while(i<10){
     if(alpha_colors[i] != alpha_colors[i-1]){
         alpha_colors.push(cores[Math.floor(Math.random() * cores.length)]);
         alpha_colors.sort();
