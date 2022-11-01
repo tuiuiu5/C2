@@ -156,7 +156,7 @@ while(i<9){
         i++;
     }else{
             while(alpha_colors[i] == alpha_colors[i-1]){
-                alpha_colors.pop(i);
+                alpha_colors.pop();
                 alpha_colors.push(cores[Math.floor(Math.random() * cores.length)]);
                 alpha_colors.sort();
 
