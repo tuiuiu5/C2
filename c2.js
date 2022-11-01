@@ -164,7 +164,6 @@ while(i<9){
             i++;
         }
 }
-alpha_colors.sort();
 var acabou = false;
 var tentativas = 0;
 var coralvo = alpha_colors[Math.floor(Math.random() * alpha_colors.length)];
